@@ -71,6 +71,9 @@ def put_listitems_into_cells(
     except Exception:
         pass
     idx_col = get_iat_columns(df, column)
+    if not indexlist:
+        if len(values) == len(df):
+            indexlist = df.index.__array__()
     for i, v in zip(indexlist, values):
         i = get_iat_index(df, i)
         df.iat[i, idx_col] = v
