@@ -40,7 +40,6 @@ def put_one_object_into_several_cells(
         pass
     if not indexlist:
         idx_col = get_iat_columns(df, column)
-        print(idx_col)
         df.iat[0, idx_col] = value
         df[column] = df[column].ffill()
     else:
